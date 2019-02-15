@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.421
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScreenKeyboad", "ScreenKeyboad\ScreenKeyboad.csproj", "{6B52158D-2D6D-4F5C-9C2B-08A37CDDC31F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "..\..\Common\Common\Common.csproj", "{326C56D4-4067-435F-B7B0-A93B167C2186}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6B52158D-2D6D-4F5C-9C2B-08A37CDDC31F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B52158D-2D6D-4F5C-9C2B-08A37CDDC31F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B52158D-2D6D-4F5C-9C2B-08A37CDDC31F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B52158D-2D6D-4F5C-9C2B-08A37CDDC31F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{326C56D4-4067-435F-B7B0-A93B167C2186}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{326C56D4-4067-435F-B7B0-A93B167C2186}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{326C56D4-4067-435F-B7B0-A93B167C2186}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{326C56D4-4067-435F-B7B0-A93B167C2186}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7871B522-2627-48F4-BA3D-1BBFF55AAF1A}
+	EndGlobalSection
+EndGlobal
