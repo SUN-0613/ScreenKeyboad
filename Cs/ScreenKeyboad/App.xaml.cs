@@ -34,7 +34,8 @@ namespace ScreenKeyboad
                 base.OnStartup(e);
 
                 // 画面表示
-
+                var form = new Form.View.NumericKeyboard();
+                form.ShowDialog();
 
             }
             else

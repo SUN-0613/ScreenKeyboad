@@ -8,7 +8,9 @@ namespace ScreenKeyboad.Custom
     /// <summary>
     /// TextBox機能拡張
     /// </summary>
-    /// <remarks>参考URL：https://social.msdn.microsoft.com/Forums/vstudio/en-US/7eee698c-328b-4044-b8e4-cce538b1f1b7/dependencyproperty-of-textboxselectionstart-?forum=wpf</remarks>
+    /// <remarks>
+    /// 参考URL：https://social.msdn.microsoft.com/Forums/vstudio/en-US/7eee698c-328b-4044-b8e4-cce538b1f1b7/dependencyproperty-of-textboxselectionstart-?forum=wpf
+    /// </remarks>
     public class TextBoxEx : TextBox, IDisposable
     {
 

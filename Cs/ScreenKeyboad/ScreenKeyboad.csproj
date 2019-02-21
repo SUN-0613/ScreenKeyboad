@@ -62,6 +62,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Custom\TextBoxEx.cs" />
+    <Compile Include="Form\Model\NumericKeyboard.cs" />
+    <Compile Include="Form\ViewModel\NumericKeyboard.cs" />
+    <Compile Include="Form\View\NumericKeyboard.xaml.cs">
+      <DependentUpon>NumericKeyboard.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -88,9 +93,16 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Form\Model\" />
-    <Folder Include="Form\ViewModel\" />
-    <Folder Include="Form\View\" />
+    <ProjectReference Include="..\..\..\Common\Common\Common.csproj">
+      <Project>{326c56d4-4067-435f-b7b0-a93b167c2186}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Form\View\NumericKeyboard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
