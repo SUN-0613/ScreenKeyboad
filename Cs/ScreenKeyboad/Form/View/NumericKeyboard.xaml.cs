@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Windows;
 
 namespace ScreenKeyboad.Form.View
@@ -34,6 +35,25 @@ namespace ScreenKeyboad.Form.View
         {
             _ViewModel.Dispose();
             _ViewModel = null;
+        }
+
+        /// <summary>
+        /// ViewModelプロパティ変更イベント
+        /// </summary>
+        private void OnPropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+
+            switch (e.PropertyName)
+            {
+
+                case "CallNextFocus":   //次項目へフォーカス移動
+
+
+                default:
+                    break;
+
+            }
+
         }
 
     }

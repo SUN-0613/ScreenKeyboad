@@ -21,7 +21,7 @@ namespace ScreenKeyboad.Form.ViewModel
             set
             {
 
-                if (double.TryParse(value, out double dummy))
+                if (double.TryParse(value, out double newValue))
                 {
 
                     if (!_Model.Text.Equals(value))
@@ -38,6 +38,7 @@ namespace ScreenKeyboad.Form.ViewModel
 
         /// <summary>
         /// 文字選択開始位置プロパティ
+        /// 今回未使用
         /// </summary>
         public int SelectionStart
         {
@@ -58,6 +59,7 @@ namespace ScreenKeyboad.Form.ViewModel
 
         /// <summary>
         /// 選択文字数プロパティ
+        /// 今回未使用
         /// </summary>
         public int SelectionLength
         {
@@ -92,11 +94,20 @@ namespace ScreenKeyboad.Form.ViewModel
                         (parameter) => 
                         {
 
-                            _Model.InputText(parameter);
+                            if (_Model.InputText(parameter))
+                            {
 
-                            CallPropertyChanged(nameof(Text));
-                            CallPropertyChanged(nameof(SelectionStart));
-                            CallPropertyChanged(nameof(SelectionLength));
+                                CallPropertyChanged("CallNextFocus");
+
+                            }
+                            else
+                            {
+
+                                CallPropertyChanged(nameof(Text));
+                                CallPropertyChanged(nameof(SelectionStart));
+                                CallPropertyChanged(nameof(SelectionLength));
+
+                            }
 
                         },
                         () => true

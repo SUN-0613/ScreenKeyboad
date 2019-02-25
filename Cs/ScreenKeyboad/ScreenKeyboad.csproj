@@ -61,7 +61,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Custom\TextBoxEx.cs" />
     <Compile Include="Form\Model\NumericKeyboard.cs" />
     <Compile Include="Form\ViewModel\NumericKeyboard.cs" />
     <Compile Include="Form\View\NumericKeyboard.xaml.cs">

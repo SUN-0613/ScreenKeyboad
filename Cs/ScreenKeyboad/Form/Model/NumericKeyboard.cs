@@ -15,15 +15,17 @@ namespace ScreenKeyboad.Form.Model
         /// <summary>
         /// 入力値
         /// </summary>
-        public string Text = "";
+        public string Text;
 
         /// <summary>
         /// 文字選択開始位置
+        /// 今回未使用
         /// </summary>
         public int SelectionStart = 0;
 
         /// <summary>
         /// 選択文字数
+        /// 今回未使用
         /// </summary>
         public int SelectionLength = 0;
 
@@ -56,8 +58,8 @@ namespace ScreenKeyboad.Form.Model
         private void Initialize()
         {
 
-            Text = "0";
-            SelectionStart = 1;
+            Text = "";
+            SelectionStart = 0;
             SelectionLength = 0;
 
         }
