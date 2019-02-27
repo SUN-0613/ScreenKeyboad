@@ -7,7 +7,7 @@ namespace ScreenKeyboad.Form.Model
     /// <summary>
     /// NumericKeyboard.Model
     /// </summary>
-    public class NumericKeyboard : IDisposable
+    internal class NumericKeyboard : IDisposable
     {
 
         #region Property
@@ -39,9 +39,10 @@ namespace ScreenKeyboad.Form.Model
         /// <summary>
         /// テンキー型スクリーンキーボード.Model
         /// </summary>
-        public NumericKeyboard()
+        /// <param name="value">初期値</param>
+        public NumericKeyboard(string value)
         {
-            Initialize();
+            Initialize(value);
         }
 
         /// <summary>
@@ -55,11 +56,12 @@ namespace ScreenKeyboad.Form.Model
         /// <summary>
         /// 初期化
         /// </summary>
-        private void Initialize()
+        /// <param name="text">入力値</param>
+        private void Initialize(string text = "")
         {
 
-            Text = "";
-            SelectionStart = 0;
+            Text = text;
+            SelectionStart = text.Length;
             SelectionLength = 0;
 
         }

@@ -7,7 +7,7 @@ namespace ScreenKeyboad.Form.ViewModel
     /// <summary>
     /// NumericKeyboard.ViewModel
     /// </summary>
-    public class NumericKeyboard : VMBase, IDisposable
+    internal class NumericKeyboard : VMBase, IDisposable
     {
 
         #region Property
@@ -130,9 +130,10 @@ namespace ScreenKeyboad.Form.ViewModel
         /// <summary>
         /// テンキー型スクリーンキーボード.ViewModel
         /// </summary>
-        public NumericKeyboard()
+        /// <param name="value">初期値</param>
+        public NumericKeyboard(string value)
         {
-            _Model = new Model.NumericKeyboard();
+            _Model = new Model.NumericKeyboard(value);
         }
 
         /// <summary>

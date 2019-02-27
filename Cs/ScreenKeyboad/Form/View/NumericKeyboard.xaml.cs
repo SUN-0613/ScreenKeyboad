@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Windows;
+using System.Windows.Input;
 
 namespace ScreenKeyboad.Form.View
 {
@@ -11,6 +12,11 @@ namespace ScreenKeyboad.Form.View
     {
 
         /// <summary>
+        /// 戻り値
+        /// </summary>
+        public string ReturnValue = "";
+
+        /// <summary>
         /// ViewModel
         /// </summary>
         private ViewModel.NumericKeyboard _ViewModel;
@@ -18,12 +24,13 @@ namespace ScreenKeyboad.Form.View
         /// <summary>
         /// テンキー型スクリーンキーボード.View
         /// </summary>
-        public NumericKeyboard()
+        /// <param name="value">初期値</param>
+        public NumericKeyboard(string value = "")
         {
 
             InitializeComponent();
 
-            _ViewModel = new ViewModel.NumericKeyboard();
+            _ViewModel = new ViewModel.NumericKeyboard(value);
             DataContext = _ViewModel;
 
         }
@@ -48,6 +55,10 @@ namespace ScreenKeyboad.Form.View
 
                 case "CallNextFocus":   //次項目へフォーカス移動
 
+                    ReturnValue = _ViewModel.Text;
+                    (FocusManager.GetFocusedElement(this.Owner) as FrameworkElement)?.MoveFocus(new TraversalRequest(FocusNavigationDirection.Next));
+
+                    break;
 
                 default:
                     break;

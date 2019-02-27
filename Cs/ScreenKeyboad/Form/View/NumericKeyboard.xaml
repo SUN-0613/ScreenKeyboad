@@ -36,64 +36,54 @@
         <Button Grid.Row="3" Grid.RowSpan="1" Grid.Column="1" Grid.ColumnSpan="1" Content="7" >
             <Button.InputBindings>
                 <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="7" />
-                <KeyBinding Key="NumPad7" Command="{Binding InputCommand}" CommandParameter="7" />
             </Button.InputBindings>
         </Button>
         <Button Grid.Row="3" Grid.RowSpan="1" Grid.Column="2" Grid.ColumnSpan="1" Content="8" >
             <Button.InputBindings>
                 <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="8" />
-                <KeyBinding Key="NumPad8" Command="{Binding InputCommand}" CommandParameter="8" />
             </Button.InputBindings>
         </Button>
         <Button Grid.Row="3" Grid.RowSpan="1" Grid.Column="3" Grid.ColumnSpan="1" Content="9" >
             <Button.InputBindings>
                 <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="9" />
-                <KeyBinding Key="NumPad9" Command="{Binding InputCommand}" CommandParameter="9" />
             </Button.InputBindings>
         </Button>
 
         <Button Grid.Row="4" Grid.RowSpan="1" Grid.Column="1" Grid.ColumnSpan="1" Content="4" >
             <Button.InputBindings>
                 <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="4" />
-                <KeyBinding Key="NumPad4" Command="{Binding InputCommand}" CommandParameter="4" />
             </Button.InputBindings>
         </Button>
         <Button Grid.Row="4" Grid.RowSpan="1" Grid.Column="2" Grid.ColumnSpan="1" Content="5" >
             <Button.InputBindings>
                 <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="5" />
-                <KeyBinding Key="NumPad5" Command="{Binding InputCommand}" CommandParameter="5" />
             </Button.InputBindings>
         </Button>
         <Button Grid.Row="4" Grid.RowSpan="1" Grid.Column="3" Grid.ColumnSpan="1" Content="6" >
             <Button.InputBindings>
                 <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="6" />
-                <KeyBinding Key="NumPad6" Command="{Binding InputCommand}" CommandParameter="6" />
             </Button.InputBindings>
         </Button>
 
         <Button Grid.Row="5" Grid.RowSpan="1" Grid.Column="1" Grid.ColumnSpan="1" Content="1" >
             <Button.InputBindings>
                 <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="1" />
-                <KeyBinding Key="NumPad1" Command="{Binding InputCommand}" CommandParameter="1" />
             </Button.InputBindings>
         </Button>
         <Button Grid.Row="5" Grid.RowSpan="1" Grid.Column="2" Grid.ColumnSpan="1" Content="2" >
             <Button.InputBindings>
                 <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="2" />
-                <KeyBinding Key="NumPad2" Command="{Binding InputCommand}" CommandParameter="2" />
             </Button.InputBindings>
         </Button>
         <Button Grid.Row="5" Grid.RowSpan="1" Grid.Column="3" Grid.ColumnSpan="1" Content="3" >
             <Button.InputBindings>
                 <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="3" />
-                <KeyBinding Key="NumPad3" Command="{Binding InputCommand}" CommandParameter="3" />
             </Button.InputBindings>
         </Button>
 
         <Button Grid.Row="6" Grid.RowSpan="1" Grid.Column="1" Grid.ColumnSpan="1" Content="0" >
             <Button.InputBindings>
                 <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="0" />
-                <KeyBinding Key="NumPad0" Command="{Binding InputCommand}" CommandParameter="0" />
             </Button.InputBindings>
         </Button>
         <Button Grid.Row="6" Grid.RowSpan="1" Grid.Column="2" Grid.ColumnSpan="1" Content="00" >
@@ -104,7 +94,6 @@
         <Button Grid.Row="6" Grid.RowSpan="1" Grid.Column="3" Grid.ColumnSpan="1" Content="." >
             <Button.InputBindings>
                 <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="." />
-                <KeyBinding Key="Decimal" Command="{Binding InputCommand}" CommandParameter="." />
             </Button.InputBindings>
         </Button>
 
@@ -112,27 +101,22 @@
         <Button Grid.Row="1" Grid.RowSpan="1" Grid.Column="5" Grid.ColumnSpan="1" Content="Clear" >
             <Button.InputBindings>
                 <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="Clear" />
-                <KeyBinding Key="Delete" Command="{Binding InputCommand}" CommandParameter="Clear" />
             </Button.InputBindings>
         </Button>
 
         <Button Grid.Row="3" Grid.RowSpan="1" Grid.Column="5" Grid.ColumnSpan="1" Content="BS" >
             <Button.InputBindings>
                 <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="BS" />
-                <KeyBinding Key="Backspace" Command="{Binding InputCommand}" CommandParameter="BS" />
             </Button.InputBindings>
         </Button>
         <Button Grid.Row="4" Grid.RowSpan="1" Grid.Column="5" Grid.ColumnSpan="1" Content="±" >
             <Button.InputBindings>
                 <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="±" />
-                <KeyBinding Key="Add" Command="{Binding InputCommand}" CommandParameter="±" />
-                <KeyBinding Key="Subtract" Command="{Binding InputCommand}" CommandParameter="±" />
             </Button.InputBindings>
         </Button>
         <Button Grid.Row="5" Grid.RowSpan="2" Grid.Column="5" Grid.ColumnSpan="1" Content="Next" >
             <Button.InputBindings>
                 <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="Next" />
-                <KeyBinding Key="Return" Command="{Binding InputCommand}" CommandParameter="Next" />
             </Button.InputBindings>
         </Button>
 
