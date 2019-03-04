@@ -13,6 +13,11 @@ namespace ScreenKeyboad.Form.Model
         #region Property
 
         /// <summary>
+        /// 現在値
+        /// </summary>
+        public string NowValue;
+
+        /// <summary>
         /// 入力値
         /// </summary>
         public string Text;
@@ -56,12 +61,13 @@ namespace ScreenKeyboad.Form.Model
         /// <summary>
         /// 初期化
         /// </summary>
-        /// <param name="text">入力値</param>
-        private void Initialize(string text = "")
+        /// <param name="nowValue">現在値</param>
+        private void Initialize(string nowValue = "")
         {
 
-            Text = text;
-            SelectionStart = text.Length;
+            NowValue = nowValue;
+            Text = "";
+            SelectionStart = 0;
             SelectionLength = 0;
 
         }
@@ -124,6 +130,14 @@ namespace ScreenKeyboad.Form.Model
                             SelectionStart += 1;
 
                         }
+                        SelectionLength = 0;
+
+                    }
+                    else
+                    {
+
+                        Text = "-";
+                        SelectionStart = 1;
                         SelectionLength = 0;
 
                     }

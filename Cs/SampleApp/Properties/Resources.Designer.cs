@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AYam.ScreenKeyboad.Properties {
+namespace SampleApp.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace AYam.ScreenKeyboad.Properties {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AYam.ScreenKeyboad.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SampleApp.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -57,6 +57,15 @@ namespace AYam.ScreenKeyboad.Properties {
             }
             set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   多重起動防止 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string App_MutexMessage {
+            get {
+                return ResourceManager.GetString("App_MutexMessage", resourceCulture);
             }
         }
     }

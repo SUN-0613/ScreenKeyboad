@@ -1,0 +1,29 @@
+﻿<Window x:Class="SampleApp.Form.View.InputDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:sk="clr-namespace:ScreenKeyboad.Custom;assembly=ScreenKeyboad"
+        mc:Ignorable="d"
+        Title="InputDialog" 
+        Height="100" Width="258"
+        >
+    <StackPanel Orientation="Horizontal" MinHeight="30" >
+        <StackPanel Orientation="Vertical" MinWidth="100">
+            <Border Height="30" >
+                <TextBlock VerticalAlignment="Center" TextAlignment="Right" Text="項目1" />
+            </Border>
+            <Border Height="30" >
+                <TextBlock VerticalAlignment="Center" TextAlignment="Right" Text="項目2" />
+            </Border>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Margin="5,0" MinWidth="130">
+            <Border Height="30" >
+                <sk:TextBoxSK VerticalAlignment="Center" HorizontalContentAlignment="Right" IsUseNumericKeyboard="True" Text="{Binding NumText1}" />
+            </Border>
+            <Border Height="30" >
+                <sk:TextBoxSK VerticalAlignment="Center" HorizontalContentAlignment="Right" IsUseNumericKeyboard="True" Text="{Binding NumText2}" />
+            </Border>
+        </StackPanel>
+    </StackPanel>
+</Window>

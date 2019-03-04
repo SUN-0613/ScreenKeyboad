@@ -13,6 +13,30 @@ namespace ScreenKeyboad.Form.ViewModel
         #region Property
 
         /// <summary>
+        /// 現在値プロパティ
+        /// </summary>
+        public string NowValue
+        {
+            get { return _Model.NowValue; }
+            set
+            {
+
+                if (double.TryParse(value, out double newValue))
+                {
+
+                    if (!_Model.NowValue.Equals(value))
+                    {
+                        _Model.NowValue = value;
+                    }
+
+                }
+
+                CallPropertyChanged();
+
+            }
+        }
+
+        /// <summary>
         /// 入力値プロパティ
         /// </summary>
         public string Text

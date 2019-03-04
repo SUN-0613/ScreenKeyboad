@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6B52158D-2D6D-4F5C-9C2B-08A37CDDC31F}</ProjectGuid>
+    <ProjectGuid>{0098D3A7-A432-4122-B8AE-A8C6E98BEA29}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>AYam.ScreenKeyboad</RootNamespace>
-    <AssemblyName>ScreenKeyboad</AssemblyName>
+    <RootNamespace>SampleApp</RootNamespace>
+    <AssemblyName>SampleApp</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -16,7 +16,7 @@
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>x64</PlatformTarget>
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -75,18 +75,29 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Form\View\InputDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Form\Model\InputDialog.cs" />
+    <Compile Include="Form\ViewModel\InputDialog.cs" />
+    <Compile Include="Form\View\InputDialog.xaml.cs">
+      <DependentUpon>InputDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Custom\TextBoxSK.cs" />
-    <Compile Include="Form\Model\NumericKeyboard.cs" />
-    <Compile Include="Form\ViewModel\NumericKeyboard.cs" />
-    <Compile Include="Form\View\NumericKeyboard.xaml.cs">
-      <DependentUpon>NumericKeyboard.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -117,12 +128,11 @@
       <Project>{326c56d4-4067-435f-b7b0-a93b167c2186}</Project>
       <Name>Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ScreenKeyboad\ScreenKeyboad.csproj">
+      <Project>{6b52158d-2d6d-4f5c-9c2b-08a37cddc31f}</Project>
+      <Name>ScreenKeyboad</Name>
+    </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Page Include="Form\View\NumericKeyboard.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

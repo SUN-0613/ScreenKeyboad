@@ -2,6 +2,7 @@
 using System;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace ScreenKeyboad.Custom
 {
@@ -22,7 +23,7 @@ namespace ScreenKeyboad.Custom
                 nameof(IsUseNumericKeyboard)
                 ,typeof(bool)
                 ,typeof(TextBoxSK)
-                , new FrameworkPropertyMetadata("false", FrameworkPropertyMetadataOptions.BindsTwoWayByDefault)
+                , new FrameworkPropertyMetadata(false)
                 );
 
         #endregion
@@ -61,13 +62,17 @@ namespace ScreenKeyboad.Custom
             if (IsUseNumericKeyboard)
             {
 
-                _NumericDialog = new NumericKeyboard((string)GetValue(TextProperty))
+                Point point = PointToScreen(new Point(0d, 0d));
+
+                _NumericDialog = new NumericKeyboard((string)GetValue(TextProperty), point.X, point.Y, ActualHeight)
                 {
                     Owner = Window.GetWindow(this)
                 };
                 _NumericDialog.Show();
 
             }
+
+            Background = Brushes.Yellow;
 
         }
 
@@ -80,12 +85,18 @@ namespace ScreenKeyboad.Custom
             if (_NumericDialog != null)
             {
 
-                SetValue(TextProperty, _NumericDialog.ReturnValue);
+                if (!_NumericDialog.ReturnValue.Length.Equals(0))
+                {
+                    SetValue(TextProperty, _NumericDialog.ReturnValue);
+                }
 
+                _NumericDialog.Close();
                 _NumericDialog.Dispose();
                 _NumericDialog = null;
 
             }
+
+            Background = Brushes.White;
 
         }
 
@@ -95,7 +106,12 @@ namespace ScreenKeyboad.Custom
         /// スクリーンキーボード表示対応テキスト欄
         /// </summary>
         public TextBoxSK() : base()
-        { }
+        {
+
+            GotFocus += OnEnter;
+            LostFocus += OnLeave;
+
+        }
 
         /// <summary>
         /// 終了処理
@@ -108,6 +124,9 @@ namespace ScreenKeyboad.Custom
                 _NumericDialog.Dispose();
                 _NumericDialog = null;
             }
+
+            GotFocus -= OnEnter;
+            LostFocus -= OnLeave;
 
         }
 
