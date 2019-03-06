@@ -1,4 +1,4 @@
-﻿using ScreenKeyboad.Form.View;
+﻿using AYam.ScreenKeyboad.Form.View;
 using System;
 using System.Windows;
 using System.Windows.Controls;
@@ -26,6 +26,17 @@ namespace ScreenKeyboad.Custom
                 , new FrameworkPropertyMetadata(false)
                 );
 
+        /// <summary>
+        /// アルファベットキーボード使用可否依存プロパティ
+        /// </summary>
+        public static readonly DependencyProperty IsUseStringKeyboardProperty =
+            DependencyProperty.Register(
+                nameof(IsUseStringKeyboard)
+                , typeof(bool)
+                , typeof(TextBoxSK)
+                , new FrameworkPropertyMetadata(false)
+                );
+
         #endregion
 
         #region Property
@@ -39,6 +50,15 @@ namespace ScreenKeyboad.Custom
             set { SetValue(IsUseNumericKeyboardProperty, value); }
         }
 
+        /// <summary>
+        /// アルファベットキーボード使用可否プロパティ
+        /// </summary>
+        public bool IsUseStringKeyboard
+        {
+            get { return (bool)GetValue(IsUseStringKeyboardProperty); }
+            set { SetValue(IsUseStringKeyboardProperty, value); }
+        }
+
         #endregion
 
         #region Dialog
@@ -47,6 +67,11 @@ namespace ScreenKeyboad.Custom
         /// テンキーダイアログ
         /// </summary>
         private NumericKeyboard _NumericDialog = null;
+
+        /// <summary>
+        /// アルファベットキーボードダイアログ
+        /// </summary>
+        private StringKeyboard _StringDialog = null;
 
         #endregion
 
@@ -58,17 +83,27 @@ namespace ScreenKeyboad.Custom
         private void OnEnter(object sender, EventArgs e)
         {
 
+            Point point = PointToScreen(new Point(0d, 0d));
+
             // テンキー表示
             if (IsUseNumericKeyboard)
             {
 
-                Point point = PointToScreen(new Point(0d, 0d));
-
-                _NumericDialog = new NumericKeyboard((string)GetValue(TextProperty), point.X, point.Y, ActualHeight)
+                _NumericDialog = new NumericKeyboard((string)GetValue(TextProperty), point.X, point.Y, ActualHeight, ActualWidth)
                 {
                     Owner = Window.GetWindow(this)
                 };
                 _NumericDialog.Show();
+
+            }
+            else if (IsUseStringKeyboard)
+            {
+
+                _StringDialog = new StringKeyboard((string)GetValue(TextProperty), point.X, point.Y, ActualHeight, ActualWidth)
+                {
+                    Owner = Window.GetWindow(this)
+                };
+                _StringDialog.Show();
 
             }
 
@@ -93,6 +128,20 @@ namespace ScreenKeyboad.Custom
                 _NumericDialog.Close();
                 _NumericDialog.Dispose();
                 _NumericDialog = null;
+
+            }
+
+            if (_StringDialog != null)
+            {
+
+                if (!_StringDialog.ReturnValue.Length.Equals(0))
+                {
+                    SetValue(TextProperty, _StringDialog.ReturnValue);
+                }
+
+                _StringDialog.Close();
+                _StringDialog.Dispose();
+                _StringDialog = null;
 
             }
 
@@ -123,6 +172,12 @@ namespace ScreenKeyboad.Custom
             {
                 _NumericDialog.Dispose();
                 _NumericDialog = null;
+            }
+
+            if (_StringDialog != null)
+            {
+                _StringDialog.Dispose();
+                _StringDialog = null;
             }
 
             GotFocus -= OnEnter;

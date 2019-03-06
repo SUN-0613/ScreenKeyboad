@@ -1,13 +1,14 @@
 ﻿using AYam.Common.ViewModel;
 using System;
+using System.Windows;
 
-namespace ScreenKeyboad.Form.Model
+namespace AYam.ScreenKeyboad.Form.Model
 {
 
     /// <summary>
-    /// NumericKeyboard.Model
+    /// Keyboard.Model
     /// </summary>
-    internal class NumericKeyboard : IDisposable
+    internal class Keyboard : IDisposable
     {
 
         #region Property
@@ -39,13 +40,67 @@ namespace ScreenKeyboad.Form.Model
         /// </summary>
         public DelegateCommand<string> InputCommand;
 
+        /// <summary>
+        /// Shiftキー押下
+        /// </summary>
+        private bool _IsShift = false;
+
+        /// <summary>
+        /// Shiftキー押下プロパティ
+        /// </summary>
+        public bool IsShift
+        {
+            get { return _IsShift; }
+            set
+            {
+
+                if (!IsCaps)
+                {
+
+                    _IsShift = value;
+
+                    if (value)
+                    {
+
+                        ShiftOffVisible = Visibility.Hidden;
+                        ShiftOnVisible = Visibility.Visible;
+
+                    }
+                    else
+                    {
+
+                        ShiftOffVisible = Visibility.Visible;
+                        ShiftOnVisible = Visibility.Hidden;
+
+                    }
+
+                }
+
+            }
+        }
+
+        /// <summary>
+        /// Caps Lockキー押下
+        /// </summary>
+        public bool IsCaps = false;
+
+        /// <summary>
+        /// Shiftキー非押下時に表示
+        /// </summary>
+        public Visibility ShiftOffVisible = Visibility.Visible;
+
+        /// <summary>
+        /// Shiftキー押下時に表示
+        /// </summary>
+        public Visibility ShiftOnVisible = Visibility.Hidden;
+
         #endregion
 
         /// <summary>
-        /// テンキー型スクリーンキーボード.Model
+        /// キーボード.ModelのBase
         /// </summary>
-        /// <param name="value">初期値</param>
-        public NumericKeyboard(string value)
+        /// <param name="value"></param>
+        public Keyboard(string value)
         {
             Initialize(value);
         }
@@ -54,9 +109,7 @@ namespace ScreenKeyboad.Form.Model
         /// 終了処理
         /// </summary>
         public void Dispose()
-        {
-
-        }
+        { }
 
         /// <summary>
         /// 初期化
@@ -69,6 +122,7 @@ namespace ScreenKeyboad.Form.Model
             Text = "";
             SelectionStart = 0;
             SelectionLength = 0;
+            IsShift = false;
 
         }
 
@@ -77,13 +131,14 @@ namespace ScreenKeyboad.Form.Model
         /// </summary>
         /// <param name="content">Button.Content</param>
         /// <returns>
-        /// True  : 次フォーカスへ移動
-        /// false : 通常処理
+        /// -1 : 通常処理
+        ///  1 : 次フォーカスへ移動
+        ///  2 : Shift処理
         /// </returns>
-        public bool InputText(string content)
+        public int InputText(string content)
         {
 
-            bool returnValue = false;
+            int returnValue = -1;
 
             switch (content.ToUpper())
             {
@@ -103,6 +158,7 @@ namespace ScreenKeyboad.Form.Model
                         ControlText();
                     }
 
+                    IsShift = false;
                     break;
 
                 case "±":
@@ -142,14 +198,32 @@ namespace ScreenKeyboad.Form.Model
 
                     }
 
+                    IsShift = false;
                     break;
 
                 case "NEXT":
-                    returnValue = true;
+                    returnValue = 1;
+                    break;
+
+                case "SHIFT":
+                    IsShift = !IsShift;
+                    returnValue = 2;
+                    break;
+
+                case "CAPS":
+
+                    if (IsShift)
+                    {
+                        IsCaps = !IsCaps;
+                    }
+                    IsShift = false;
+
+                    returnValue = 3;
                     break;
 
                 default:
                     ControlText(content);
+                    IsShift = false;
                     break;
 
             }
@@ -163,7 +237,7 @@ namespace ScreenKeyboad.Form.Model
         /// </summary>
         /// <param name="insertString">挿入文字列</param>
         /// /// <returns>Textbox.Textから選択文字列を削除し指定文字列を挿入した文字列</returns>
-        private void ControlText(string insertString = "")
+        protected virtual void ControlText(string insertString = "")
         {
 
             // 削除文字よりも前を取得

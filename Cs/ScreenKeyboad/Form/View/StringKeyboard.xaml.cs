@@ -6,9 +6,9 @@ using System.Windows.Input;
 namespace AYam.ScreenKeyboad.Form.View
 {
     /// <summary>
-    /// NumericKeyboard.xaml の相互作用ロジック
+    /// StringKeyboard.xaml の相互作用ロジック
     /// </summary>
-    public partial class NumericKeyboard : Window, IDisposable
+    public partial class StringKeyboard : Window, IDisposable
     {
 
         /// <summary>
@@ -22,14 +22,14 @@ namespace AYam.ScreenKeyboad.Form.View
         private ViewModel.Keyboard _ViewModel;
 
         /// <summary>
-        /// テンキー型スクリーンキーボード.View
+        /// アルファベット型スクリーンキーボード.View
         /// </summary>
         /// <param name="value">初期値</param>
         /// <param name="left">呼出元Control.PointToScreen.X</param>
         /// <param name="top">呼出元Control.PointToScreen.Y</param>
         /// <param name="height">呼出元Control.Height</param>
         /// <param name="width">呼出元Control.Width</param>
-        public NumericKeyboard(string value = "", double left = -1d, double top = -1d, double height = -1d, double width = -1d)
+        public StringKeyboard(string value = "", double left = -1d, double top = -1d, double height = -1d, double width = -1d)
         {
 
             InitializeComponent();
@@ -40,7 +40,7 @@ namespace AYam.ScreenKeyboad.Form.View
             _ViewModel.PropertyChanged += OnPropertyChanged;
 
             // 表示位置
-            if (!left.Equals(-1d) && !top.Equals(-1d) && !height.Equals(-1d) && !width.Equals(-1d))
+            if (!left.Equals(-1d) && !top.Equals(-1d) && !height.Equals(-1d))
             {
 
                 if (left + width + Width > SystemParameters.WorkArea.Width)

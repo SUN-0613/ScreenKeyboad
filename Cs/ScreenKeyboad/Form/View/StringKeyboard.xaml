@@ -1,0 +1,682 @@
+﻿<Window x:Class="AYam.ScreenKeyboad.Form.View.StringKeyboard"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Keyboard accessory" 
+        WindowStyle="ToolWindow"
+        Height="300" Width="600">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="5" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5" />
+            <ColumnDefinition Width="12*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="5" />
+        </Grid.ColumnDefinitions>
+        
+        <!--Value-->
+        <Grid Grid.Row="1" Grid.RowSpan="1" Grid.Column="1" Grid.ColumnSpan="1" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="2*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="8*" />
+                <ColumnDefinition Width="5" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Row="0" Grid.RowSpan="1" Grid.Column="0" Grid.ColumnSpan="1" TextAlignment="Right" VerticalAlignment="Center" Padding="2.0" Foreground="Blue" Text="Now" />
+            <TextBlock Grid.Row="1" Grid.RowSpan="1" Grid.Column="0" Grid.ColumnSpan="1" TextAlignment="Right" VerticalAlignment="Center" Padding="2.0" Foreground="Black" Text="Input" />
+
+            <TextBlock Grid.Row="0" Grid.RowSpan="1" Grid.Column="1" Grid.ColumnSpan="1" TextAlignment="Right" VerticalAlignment="Center" Padding="2.0" Foreground="Blue" Text="{Binding NowValue}" />
+            <TextBlock Grid.Row="1" Grid.RowSpan="1" Grid.Column="1" Grid.ColumnSpan="1" TextAlignment="Right" VerticalAlignment="Center" Padding="2.0" Foreground="Black" Text="{Binding Text}" />
+
+        </Grid>
+
+        <!--Number or Symbol-->
+        <Grid Grid.Row="3" Grid.RowSpan="1" Grid.Column="1" Grid.ColumnSpan="1" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="0" />
+            </Grid.ColumnDefinitions>
+
+            <!--Shift off-->
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="1" Grid.ColumnSpan="1" Content="1" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="1" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="2" Grid.ColumnSpan="1" Content="2" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="2" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="3" Grid.ColumnSpan="1" Content="3" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="3" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="4" Grid.ColumnSpan="1" Content="4" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="4" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="5" Grid.ColumnSpan="1" Content="5" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="5" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="6" Grid.ColumnSpan="1" Content="6" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="6" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="7" Grid.ColumnSpan="1" Content="7" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="7" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="8" Grid.ColumnSpan="1" Content="8" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="8" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="9" Grid.ColumnSpan="1" Content="9" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="9" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="10" Grid.ColumnSpan="1" Content="0" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="0" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="11" Grid.ColumnSpan="1" Content="-" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="-" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="12" Grid.ColumnSpan="1" Content="^" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="^" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="13" Grid.ColumnSpan="1" Content="\" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="\" />
+                </Button.InputBindings>
+            </Button>
+
+            <!--Shift on-->
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="1" Grid.ColumnSpan="1" Content="!" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="!" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="2" Grid.ColumnSpan="1" Content="&quot;" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="&quot;" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="3" Grid.ColumnSpan="1" Content="#" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="#" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="4" Grid.ColumnSpan="1" Content="$" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="$" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="5" Grid.ColumnSpan="1" Content="%" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="%" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="6" Grid.ColumnSpan="1" Content="&amp;" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="&amp;" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="7" Grid.ColumnSpan="1" Content="'" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="'" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="8" Grid.ColumnSpan="1" Content="(" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="(" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="9" Grid.ColumnSpan="1" Content=")" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter=")" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="10" Grid.ColumnSpan="1" Content="" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="11" Grid.ColumnSpan="1" Content="=" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="=" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="12" Grid.ColumnSpan="1" Content="~" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="~" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="13" Grid.ColumnSpan="1" Content="|" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="|" />
+                </Button.InputBindings>
+            </Button>
+
+        </Grid>
+
+        <!--QWERT...-->
+        <Grid Grid.Row="4" Grid.RowSpan="1" Grid.Column="1" Grid.ColumnSpan="1" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <!--Shift off-->
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="1" Grid.ColumnSpan="1" Content="q" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="q" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="2" Grid.ColumnSpan="1" Content="w" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="w" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="3" Grid.ColumnSpan="1" Content="e" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="e" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="4" Grid.ColumnSpan="1" Content="r" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="r" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="5" Grid.ColumnSpan="1" Content="t" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="t" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="6" Grid.ColumnSpan="1" Content="y" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="y" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="7" Grid.ColumnSpan="1" Content="u" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="u" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="8" Grid.ColumnSpan="1" Content="i" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="i" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="9" Grid.ColumnSpan="1" Content="o" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="o" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="10" Grid.ColumnSpan="1" Content="p" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="p" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="11" Grid.ColumnSpan="1" Content="@" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="@" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="12" Grid.ColumnSpan="1" Content="[" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="[" />
+                </Button.InputBindings>
+            </Button>
+
+            <!--Shift on-->
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="1" Grid.ColumnSpan="1" Content="Q" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="Q" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="2" Grid.ColumnSpan="1" Content="W" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="W" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="3" Grid.ColumnSpan="1" Content="E" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="E" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="4" Grid.ColumnSpan="1" Content="R" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="R" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="5" Grid.ColumnSpan="1" Content="T" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="T" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="6" Grid.ColumnSpan="1" Content="Y" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="Y" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="7" Grid.ColumnSpan="1" Content="U" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="U" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="8" Grid.ColumnSpan="1" Content="I" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="I" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="9" Grid.ColumnSpan="1" Content="O" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="O" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="10" Grid.ColumnSpan="1" Content="P" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="P" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="11" Grid.ColumnSpan="1" Content="`" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="`" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="12" Grid.ColumnSpan="1" Content="{}{" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="{}{" />
+                </Button.InputBindings>
+            </Button>
+
+        </Grid>
+
+        <!--ASDFG...-->
+        <Grid Grid.Row="5" Grid.RowSpan="1" Grid.Column="1" Grid.ColumnSpan="1" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <!--Control-->
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="0" Grid.ColumnSpan="1" Content="Caps" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="Caps" />
+                </Button.InputBindings>
+            </Button>
+            
+            <!--Shift off-->
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="1" Grid.ColumnSpan="1" Content="a" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="a" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="2" Grid.ColumnSpan="1" Content="s" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="s" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="3" Grid.ColumnSpan="1" Content="d" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="d" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="4" Grid.ColumnSpan="1" Content="f" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="f" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="5" Grid.ColumnSpan="1" Content="g" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="g" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="6" Grid.ColumnSpan="1" Content="h" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="h" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="7" Grid.ColumnSpan="1" Content="j" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="j" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="8" Grid.ColumnSpan="1" Content="k" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="k" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="9" Grid.ColumnSpan="1" Content="l" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="l" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="10" Grid.ColumnSpan="1" Content=";" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter=";" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="11" Grid.ColumnSpan="1" Content=":" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter=":" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="12" Grid.ColumnSpan="1" Content="]" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="]" />
+                </Button.InputBindings>
+            </Button>
+
+            <!--Shift on-->
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="1" Grid.ColumnSpan="1" Content="A" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="A" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="2" Grid.ColumnSpan="1" Content="S" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="S" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="3" Grid.ColumnSpan="1" Content="D" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="D" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="4" Grid.ColumnSpan="1" Content="F" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="F" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="5" Grid.ColumnSpan="1" Content="G" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="G" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="6" Grid.ColumnSpan="1" Content="H" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="H" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="7" Grid.ColumnSpan="1" Content="J" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="J" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="8" Grid.ColumnSpan="1" Content="K" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="K" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="9" Grid.ColumnSpan="1" Content="L" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="L" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="10" Grid.ColumnSpan="1" Content="+" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="+" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="11" Grid.ColumnSpan="1" Content="*" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="*" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="12" Grid.ColumnSpan="1" Content="}" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="}" />
+                </Button.InputBindings>
+            </Button>
+
+        </Grid>
+
+        <!--ZXCVB...-->
+        <Grid Grid.Row="6" Grid.RowSpan="1" Grid.Column="1" Grid.ColumnSpan="2" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*" />
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="3*" />
+            </Grid.ColumnDefinitions>
+
+            <!--Control-->
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="0" Grid.ColumnSpan="1" Content="Shift" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="Shift" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="12" Grid.ColumnSpan="1" Content="Shift" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="Shift" />
+                </Button.InputBindings>
+            </Button>
+
+            <!--Shift off-->
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="1" Grid.ColumnSpan="1" Content="z" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="z" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="2" Grid.ColumnSpan="1" Content="x" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="x" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="3" Grid.ColumnSpan="1" Content="c" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="c" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="4" Grid.ColumnSpan="1" Content="v" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="v" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="5" Grid.ColumnSpan="1" Content="b" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="b" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="6" Grid.ColumnSpan="1" Content="n" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="n" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="7" Grid.ColumnSpan="1" Content="m" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="m" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="8" Grid.ColumnSpan="1" Content="," Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="," />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="9" Grid.ColumnSpan="1" Content="." Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="." />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="10" Grid.ColumnSpan="1" Content="/" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="/" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="11" Grid.ColumnSpan="1" Content="\" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="\" />
+                </Button.InputBindings>
+            </Button>
+
+            <!--Shift on-->
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="1" Grid.ColumnSpan="1" Content="Z" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="Z" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="2" Grid.ColumnSpan="1" Content="X" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="X" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="3" Grid.ColumnSpan="1" Content="C" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="C" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="4" Grid.ColumnSpan="1" Content="V" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="V" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="5" Grid.ColumnSpan="1" Content="B" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="B" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="6" Grid.ColumnSpan="1" Content="N" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="N" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="7" Grid.ColumnSpan="1" Content="M" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="M" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="8" Grid.ColumnSpan="1" Content="&lt;" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="&lt;" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="9" Grid.ColumnSpan="1" Content="&gt;" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="&gt;" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="10" Grid.ColumnSpan="1" Content="?" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="?" />
+                </Button.InputBindings>
+            </Button>
+            <Button Grid.Row="0" Grid.RowSpan="1" Grid.Column="11" Grid.ColumnSpan="1" Content="_" Visibility="{Binding ShiftOffVisible}" >
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="_" />
+                </Button.InputBindings>
+            </Button>
+
+        </Grid>
+
+        <!--Control-->
+        <Button Grid.Row="1" Grid.RowSpan="1" Grid.Column="2" Grid.ColumnSpan="1" Content="Clear" >
+            <Button.InputBindings>
+                <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="Clear" />
+            </Button.InputBindings>
+        </Button>
+        <Button Grid.Row="3" Grid.RowSpan="1" Grid.Column="2" Grid.ColumnSpan="1" Content="BS" >
+            <Button.InputBindings>
+                <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="BS" />
+            </Button.InputBindings>
+        </Button>
+        <Button Grid.Row="4" Grid.RowSpan="2" Grid.Column="2" Grid.ColumnSpan="1" Content="Next" >
+            <Button.InputBindings>
+                <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter="Next" />
+            </Button.InputBindings>
+        </Button>
+        <Button Grid.Row="7" Grid.RowSpan="1" Grid.Column="1" Grid.ColumnSpan="2" Content="Space" >
+            <Button.InputBindings>
+                <MouseBinding MouseAction="LeftClick" Command="{Binding InputCommand}" CommandParameter=" " />
+            </Button.InputBindings>
+        </Button>
+
+    </Grid>
+</Window>

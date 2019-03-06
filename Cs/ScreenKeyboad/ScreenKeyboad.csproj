@@ -82,10 +82,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Custom\TextBoxSK.cs" />
-    <Compile Include="Form\Model\NumericKeyboard.cs" />
-    <Compile Include="Form\ViewModel\NumericKeyboard.cs" />
+    <Compile Include="Form\Model\Keyboard.cs" />
+    <Compile Include="Form\ViewModel\Keyboard.cs" />
     <Compile Include="Form\View\NumericKeyboard.xaml.cs">
       <DependentUpon>NumericKeyboard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Form\View\StringKeyboard.xaml.cs">
+      <DependentUpon>StringKeyboard.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -120,6 +123,10 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="Form\View\NumericKeyboard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Form\View\StringKeyboard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

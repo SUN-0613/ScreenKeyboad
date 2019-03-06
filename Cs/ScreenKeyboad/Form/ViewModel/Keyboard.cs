@@ -1,13 +1,14 @@
 ﻿using AYam.Common.ViewModel;
 using System;
+using System.Windows;
 
-namespace ScreenKeyboad.Form.ViewModel
+namespace AYam.ScreenKeyboad.Form.ViewModel
 {
 
     /// <summary>
-    /// NumericKeyboard.ViewModel
+    /// Keyboard.ViewModel
     /// </summary>
-    internal class NumericKeyboard : VMBase, IDisposable
+    internal class Keyboard : VMBase, IDisposable
     {
 
         #region Property
@@ -118,18 +119,26 @@ namespace ScreenKeyboad.Form.ViewModel
                         (parameter) => 
                         {
 
-                            if (_Model.InputText(parameter))
+                            switch (_Model.InputText(parameter))
                             {
 
-                                CallPropertyChanged("CallNextFocus");
+                                case 1:     // フォーカス移動
+                                    CallPropertyChanged("CallNextFocus");
+                                    break;
 
-                            }
-                            else
-                            {
+                                case 2:     // Shift押下
+                                case 3:     // Caps押下
+                                    CallPropertyChanged(nameof(ShiftOffVisible));
+                                    CallPropertyChanged(nameof(ShiftOnVisible));
+                                    break;
 
-                                CallPropertyChanged(nameof(Text));
-                                CallPropertyChanged(nameof(SelectionStart));
-                                CallPropertyChanged(nameof(SelectionLength));
+                                default:    // 通常処理:文字入力
+                                    CallPropertyChanged(nameof(Text));
+                                    CallPropertyChanged(nameof(SelectionStart));
+                                    CallPropertyChanged(nameof(SelectionLength));
+                                    CallPropertyChanged(nameof(ShiftOffVisible));
+                                    CallPropertyChanged(nameof(ShiftOnVisible));
+                                    break;
 
                             }
 
@@ -144,20 +153,46 @@ namespace ScreenKeyboad.Form.ViewModel
             }
         }
 
+        /// <summary>
+        /// Shiftキー非押下時に表示プロパティ
+        /// </summary>
+        public Visibility ShiftOffVisible
+        {
+            get { return _Model.ShiftOffVisible; }
+            set
+            {
+                _Model.ShiftOffVisible = value;
+                CallPropertyChanged();
+            }
+        }
+
+        /// <summary>
+        /// Shiftキー押下時に表示プロパティ
+        /// </summary>
+        public Visibility ShiftOnVisible
+        {
+            get { return _Model.ShiftOnVisible; }
+            set
+            {
+                _Model.ShiftOnVisible = value;
+                CallPropertyChanged();
+            }
+        }
+
         #endregion
 
         /// <summary>
         /// Model
         /// </summary>
-        private Model.NumericKeyboard _Model;
+        private Model.Keyboard _Model;
 
         /// <summary>
         /// テンキー型スクリーンキーボード.ViewModel
         /// </summary>
         /// <param name="value">初期値</param>
-        public NumericKeyboard(string value)
+        public Keyboard(string value)
         {
-            _Model = new Model.NumericKeyboard(value);
+            _Model = new Model.Keyboard(value);
         }
 
         /// <summary>
