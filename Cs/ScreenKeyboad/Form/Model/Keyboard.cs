@@ -201,6 +201,47 @@ namespace AYam.ScreenKeyboad.Form.Model
                     IsShift = false;
                     break;
 
+                case "NUMBERDOT":
+
+                    if (Text.Length.Equals(0) 
+                        || (Text.Length.Equals(1) 
+                            && Text.Equals("-")
+                            )
+                        )
+                    {
+                        Text = Text + "0.";
+                        SelectionStart = 2;
+                        SelectionLength = 0;
+                    }
+                    else
+                    {
+                        ControlText(".");
+                    }
+
+                    IsShift = false;
+                    break;
+
+                case "00":
+
+                    if (Text.Length.Equals(0) 
+                        || (Text.Length.Equals(1) 
+                            && (Text.Equals("-") || Text.Equals("0"))
+                            )
+                        || (Text.Length.Equals(2) && Text.Equals("-0"))
+                        )
+                    {
+                        Text = Text.Contains("-") ? "-0" :  "0";
+                        SelectionStart = Text.Length;
+                        SelectionLength = 0;
+                    }
+                    else
+                    {
+                        ControlText("00");
+                    }
+
+                    IsShift = false;
+                    break;
+
                 case "NEXT":
                     returnValue = 1;
                     break;
