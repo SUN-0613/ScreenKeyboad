@@ -120,7 +120,7 @@ namespace ScreenKeyboad.Custom
             if (_NumericDialog != null)
             {
 
-                if (!_NumericDialog.ReturnValue.Length.Equals(0))
+                if (_NumericDialog.IsPushNextKey)
                 {
                     SetValue(TextProperty, _NumericDialog.ReturnValue);
                 }
@@ -134,7 +134,7 @@ namespace ScreenKeyboad.Custom
             if (_StringDialog != null)
             {
 
-                if (!_StringDialog.ReturnValue.Length.Equals(0))
+                if (_StringDialog.IsPushNextKey)
                 {
                     SetValue(TextProperty, _StringDialog.ReturnValue);
                 }

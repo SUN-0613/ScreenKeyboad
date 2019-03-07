@@ -12,14 +12,24 @@ namespace SampleApp.Form.Model
         #region ViewModel.Property
 
         /// <summary>
-        /// 項目1
+        /// テンキー1
         /// </summary>
         public string NumText1 = "";
 
         /// <summary>
-        /// 項目2
+        /// テンキー2
         /// </summary>
         public string NumText2 = "";
+
+        /// <summary>
+        /// 文字入力1
+        /// </summary>
+        public string StringText1 = "";
+
+        /// <summary>
+        /// 文字入力2
+        /// </summary>
+        public string StringText2 = "";
 
         #endregion
 
@@ -27,17 +37,13 @@ namespace SampleApp.Form.Model
         /// InputDialog.Model
         /// </summary>
         public InputDialog()
-        {
-
-        }
+        { }
 
         /// <summary>
         /// 終了処理
         /// </summary>
         public void Dispose()
-        {
-
-        }
+        { }
 
     }
 

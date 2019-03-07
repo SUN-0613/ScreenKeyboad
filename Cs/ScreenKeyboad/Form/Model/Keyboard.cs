@@ -119,8 +119,8 @@ namespace AYam.ScreenKeyboad.Form.Model
         {
 
             NowValue = nowValue;
-            Text = "";
-            SelectionStart = 0;
+            Text = nowValue;
+            SelectionStart = Text.Length;
             SelectionLength = 0;
             IsShift = false;
 

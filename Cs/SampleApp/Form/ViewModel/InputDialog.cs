@@ -13,7 +13,7 @@ namespace SampleApp.Form.ViewModel
         #region Property
 
         /// <summary>
-        /// 項目1
+        /// テンキー1プロパティ
         /// </summary>
         public string NumText1
         {
@@ -29,7 +29,7 @@ namespace SampleApp.Form.ViewModel
         }
 
         /// <summary>
-        /// 項目2
+        /// テンキー2プロパティ
         /// </summary>
         public string NumText2
         {
@@ -39,6 +39,38 @@ namespace SampleApp.Form.ViewModel
                 if (!_Model.NumText2.Equals(value))
                 {
                     _Model.NumText2 = value;
+                    CallPropertyChanged();
+                }
+            }
+        }
+
+        /// <summary>
+        /// 文字入力1プロパティ
+        /// </summary>
+        public string StringText1
+        {
+            get { return _Model.StringText1; }
+            set
+            {
+                if (!_Model.StringText1.Equals(value))
+                {
+                    _Model.StringText1 = value;
+                    CallPropertyChanged();
+                }
+            }
+        }
+
+        /// <summary>
+        /// 文字入力2プロパティ
+        /// </summary>
+        public string StringText2
+        {
+            get { return _Model.StringText2; }
+            set
+            {
+                if (!_Model.StringText2.Equals(value))
+                {
+                    _Model.StringText2 = value;
                     CallPropertyChanged();
                 }
             }

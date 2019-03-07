@@ -12,6 +12,11 @@ namespace AYam.ScreenKeyboad.Form.View
     {
 
         /// <summary>
+        /// Nextキー押下したか
+        /// </summary>
+        public bool IsPushNextKey = false;
+
+        /// <summary>
         /// 戻り値
         /// </summary>
         public string ReturnValue = "";
@@ -89,6 +94,7 @@ namespace AYam.ScreenKeyboad.Form.View
 
                 case "CallNextFocus":   //次項目へフォーカス移動
 
+                    IsPushNextKey = true;
                     ReturnValue = _ViewModel.Text;
                     (FocusManager.GetFocusedElement(this.Owner) as FrameworkElement)?.MoveFocus(new TraversalRequest(FocusNavigationDirection.Next));
 

@@ -6,15 +6,21 @@
         xmlns:sk="clr-namespace:ScreenKeyboad.Custom;assembly=ScreenKeyboad"
         mc:Ignorable="d"
         Title="InputDialog" 
-        Height="100" Width="258"
+        Height="200" Width="258"
         >
     <StackPanel Orientation="Horizontal" MinHeight="30" >
         <StackPanel Orientation="Vertical" MinWidth="100">
             <Border Height="30" >
-                <TextBlock VerticalAlignment="Center" TextAlignment="Right" Text="項目1" />
+                <TextBlock VerticalAlignment="Center" TextAlignment="Right" Text="テンキー:1" />
             </Border>
             <Border Height="30" >
-                <TextBlock VerticalAlignment="Center" TextAlignment="Right" Text="項目2" />
+                <TextBlock VerticalAlignment="Center" TextAlignment="Right" Text="テンキー:2" />
+            </Border>
+            <Border Height="30" >
+                <TextBlock VerticalAlignment="Center" TextAlignment="Right" Text="文字入力:1" />
+            </Border>
+            <Border Height="30" >
+                <TextBlock VerticalAlignment="Center" TextAlignment="Right" Text="文字入力:2" />
             </Border>
         </StackPanel>
         <StackPanel Orientation="Vertical" Margin="5,0" MinWidth="130">
@@ -23,6 +29,12 @@
             </Border>
             <Border Height="30" >
                 <sk:TextBoxSK VerticalAlignment="Center" HorizontalContentAlignment="Right" IsUseNumericKeyboard="True" Text="{Binding NumText2}" />
+            </Border>
+            <Border Height="30" >
+                <sk:TextBoxSK VerticalAlignment="Center" HorizontalContentAlignment="Left" IsUseStringKeyboard="True" Text="{Binding StringText1}" />
+            </Border>
+            <Border Height="30" >
+                <sk:TextBoxSK VerticalAlignment="Center" HorizontalContentAlignment="Left" IsUseStringKeyboard="True" Text="{Binding StringText2}" />
             </Border>
         </StackPanel>
     </StackPanel>
