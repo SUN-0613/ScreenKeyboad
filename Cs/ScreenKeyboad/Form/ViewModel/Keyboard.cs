@@ -104,7 +104,7 @@ namespace AYam.ScreenKeyboad.Form.ViewModel
         }
 
         /// <summary>
-        /// ボタンクリックコマンド
+        /// ボタンクリックコマンドプロパティ
         /// </summary>
         public DelegateCommand<string> InputCommand
         {

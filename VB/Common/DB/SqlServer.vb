@@ -53,22 +53,22 @@ Namespace DB
         ''' <summary>
         ''' 接続するサーバ名
         ''' </summary>
-        Private _ServerName As String
+        Private ReadOnly _ServerName As String
 
         ''' <summary>
         ''' DB名
         ''' </summary>
-        Private _DbName As String
+        Private ReadOnly _DbName As String
 
         ''' <summary>
         ''' ユーザ名
         ''' </summary>
-        Private _UserName As String
+        Private ReadOnly _UserName As String
 
         ''' <summary>
         ''' パスワード
         ''' </summary>
-        Private _Password As String
+        Private ReadOnly _Password As String
 
         ''' <summary>
         ''' 接続インスタンス
@@ -332,7 +332,7 @@ Namespace DB
         ''' <param name="parameters">SQLパラメータ</param>
         ''' <param name="queryTimeout">クエリ実行時間(秒)</param>
         ''' <returns>クエリ実行結果</returns>
-        Public Function ExecuteQuery(query As String, parameters As Dictionary(Of String, Object), Optional queryTimeout As Integer = 30)
+        Public Function ExecuteQuery(query As String, parameters As Dictionary(Of String, Object), Optional queryTimeout As Integer = 30) As SqlDataReader
 
             Try
 
@@ -368,7 +368,7 @@ Namespace DB
         ''' <param name="query">SQL文</param>
         ''' <param name="queryTimeout">クエリ実行時間(秒)</param>
         ''' <returns>クエリ実行結果</returns>
-        Public Function ExecuteQuery(query As String, Optional queryTimeout As Integer = 30)
+        Public Function ExecuteQuery(query As String, Optional queryTimeout As Integer = 30) As SqlDataReader
 
             Return ExecuteQuery(query, New Dictionary(Of String, Object), queryTimeout)
 

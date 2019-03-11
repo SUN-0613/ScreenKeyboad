@@ -7,6 +7,8 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ScreenKeyboard", "ScreenKey
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Common", "..\Common\Common.vbproj", "{F90224E1-6F53-47E7-99AE-E2D0F26336C5}"
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "SampleProject", "SampleProject\SampleProject.vbproj", "{ACBDA231-12E9-4075-B45C-348EECF37C65}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,14 @@ Global
 		{F90224E1-6F53-47E7-99AE-E2D0F26336C5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F90224E1-6F53-47E7-99AE-E2D0F26336C5}.Release|x64.ActiveCfg = Release|x64
 		{F90224E1-6F53-47E7-99AE-E2D0F26336C5}.Release|x64.Build.0 = Release|x64
+		{ACBDA231-12E9-4075-B45C-348EECF37C65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACBDA231-12E9-4075-B45C-348EECF37C65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACBDA231-12E9-4075-B45C-348EECF37C65}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{ACBDA231-12E9-4075-B45C-348EECF37C65}.Debug|x64.Build.0 = Debug|Any CPU
+		{ACBDA231-12E9-4075-B45C-348EECF37C65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACBDA231-12E9-4075-B45C-348EECF37C65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACBDA231-12E9-4075-B45C-348EECF37C65}.Release|x64.ActiveCfg = Release|Any CPU
+		{ACBDA231-12E9-4075-B45C-348EECF37C65}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

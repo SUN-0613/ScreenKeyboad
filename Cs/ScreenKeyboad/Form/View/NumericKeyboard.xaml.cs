@@ -14,12 +14,12 @@ namespace AYam.ScreenKeyboad.Form.View
         /// <summary>
         /// Nextキー押下したか
         /// </summary>
-        public bool IsPushNextKey = false;
+        public bool IsPushNextKey { get; private set; } = false;
 
         /// <summary>
         /// 戻り値
         /// </summary>
-        public string ReturnValue = "";
+        public string ReturnValue { get; private set; } = "";
 
         /// <summary>
         /// ViewModel

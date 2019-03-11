@@ -99,10 +99,13 @@ namespace AYam.ScreenKeyboad.Form.Model
         /// <summary>
         /// キーボード.ModelのBase
         /// </summary>
-        /// <param name="value"></param>
+        /// <param name="value">現在値</param>
         public Keyboard(string value)
         {
+
+            NowValue = value;
             Initialize(value);
+
         }
 
         /// <summary>
@@ -118,7 +121,6 @@ namespace AYam.ScreenKeyboad.Form.Model
         private void Initialize(string nowValue = "")
         {
 
-            NowValue = nowValue;
             Text = nowValue;
             SelectionStart = Text.Length;
             SelectionLength = 0;
@@ -134,6 +136,7 @@ namespace AYam.ScreenKeyboad.Form.Model
         /// -1 : 通常処理
         ///  1 : 次フォーカスへ移動
         ///  2 : Shift処理
+        ///  3 : Caps処理
         /// </returns>
         public int InputText(string content)
         {
@@ -236,7 +239,7 @@ namespace AYam.ScreenKeyboad.Form.Model
                     }
                     else
                     {
-                        ControlText("00");
+                        ControlText(content);
                     }
 
                     IsShift = false;
@@ -277,8 +280,7 @@ namespace AYam.ScreenKeyboad.Form.Model
         /// Textbox.Textから選択文字列を削除し、指定文字列を挿入して返す
         /// </summary>
         /// <param name="insertString">挿入文字列</param>
-        /// /// <returns>Textbox.Textから選択文字列を削除し指定文字列を挿入した文字列</returns>
-        protected virtual void ControlText(string insertString = "")
+        private void ControlText(string insertString = "")
         {
 
             // 削除文字よりも前を取得

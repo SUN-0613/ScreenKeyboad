@@ -48,8 +48,8 @@ Namespace ViewModel.Custom
         ''' 初期値："Call"
         ''' </summary>
         ''' <remarks>先頭一致するプロパティ名の場合はIsEditedを更新しない</remarks>
-        Public WriteOnly Property ThrowEditEventName
-            Set(value)
+        Public WriteOnly Property ThrowEditEventName As String
+            Set(value As String)
                 _ThrowEditEventName = value
             End Set
         End Property

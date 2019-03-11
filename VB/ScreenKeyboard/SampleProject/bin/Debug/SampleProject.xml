@@ -1,0 +1,158 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+SampleProject
+</name>
+</assembly>
+<members>
+<member name="T:SampleProject.My.MyWpfExtension">
+ <summary>
+ WPF のマイ名前空間で使用できるプロパティを定義するためのモジュール
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:SampleProject.My.MyWpfExtension.Application">
+ <summary>
+ 実行中のアプリケーション用のアプリケーション オブジェクトを返します
+ </summary>
+</member>
+<member name="P:SampleProject.My.MyWpfExtension.Computer">
+ <summary>
+ ホスト コンピューターに関する情報を返します。
+ </summary>
+</member>
+<member name="P:SampleProject.My.MyWpfExtension.User">
+ <summary>
+ 現在のユーザーに関する情報を返します。現在の
+ Windows ユーザー資格情報でアプリケーションを実行する場合は、My.User.InitializeWithWindowsUser() を呼び出してください。
+ </summary>
+</member>
+<member name="P:SampleProject.My.MyWpfExtension.Log">
+ <summary>
+ アプリケーション ログを返します。リスナーは、アプリケーションの構成ファイルを使用して構成できます。
+ </summary>
+</member>
+<member name="P:SampleProject.My.MyWpfExtension.Windows">
+ <summary>
+ プロジェクトで定義されている Windows の集合を返します。
+ </summary>
+</member>
+<member name="T:SampleProject.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:SampleProject.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:SampleProject.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="T:SampleProject.Application">
+<summary>
+Application
+</summary>
+</member>
+<member name="M:SampleProject.Application.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
+<member name="M:SampleProject.Application.Main">
+<summary>
+Application Entry Point.
+</summary>
+</member>
+<member name="T:SampleProject.Form.Model.InputDialog">
+ <summary>
+ InputDialog.Model
+ </summary>
+</member>
+<member name="F:SampleProject.Form.Model.InputDialog.NumText1">
+ <summary>
+ テンキー１
+ </summary>
+</member>
+<member name="F:SampleProject.Form.Model.InputDialog.NumText2">
+ <summary>
+ テンキー２
+ </summary>
+</member>
+<member name="F:SampleProject.Form.Model.InputDialog.StringText1">
+ <summary>
+ 文字入力１
+ </summary>
+</member>
+<member name="F:SampleProject.Form.Model.InputDialog.StringText2">
+ <summary>
+ 文字入力２
+ </summary>
+</member>
+<member name="M:SampleProject.Form.Model.InputDialog.#ctor">
+ <summary>
+ InputDialog.Model
+ </summary>
+</member>
+<member name="M:SampleProject.Form.Model.InputDialog.Dispose">
+ <summary>
+ 終了処理
+ </summary>
+</member>
+<member name="T:SampleProject.Form.ViewModel.InputDialog">
+ <summary>
+ InputDialog.ViewModel
+ </summary>
+</member>
+<member name="P:SampleProject.Form.ViewModel.InputDialog.NumText1">
+ <summary>
+ テンキー１プロパティ
+ </summary>
+</member>
+<member name="P:SampleProject.Form.ViewModel.InputDialog.NumText2">
+ <summary>
+ テンキー２プロパティ
+ </summary>
+</member>
+<member name="P:SampleProject.Form.ViewModel.InputDialog.StringText1">
+ <summary>
+ 文字入力１プロパティ
+ </summary>
+</member>
+<member name="P:SampleProject.Form.ViewModel.InputDialog.StringText2">
+ <summary>
+ 文字入力２プロパティ
+ </summary>
+</member>
+<member name="F:SampleProject.Form.ViewModel.InputDialog._Model">
+ <summary>
+ Model
+ </summary>
+</member>
+<member name="M:SampleProject.Form.ViewModel.InputDialog.#ctor">
+ <summary>
+ InputDialog.ViewModel
+ </summary>
+</member>
+<member name="M:SampleProject.Form.ViewModel.InputDialog.Dispose">
+ <summary>
+ 終了処理
+ </summary>
+</member>
+<member name="T:SampleProject.Form.View.InputDialog">
+<summary>
+InputDialog
+</summary>
+</member>
+<member name="M:SampleProject.Form.View.InputDialog.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
+</members>
+</doc>

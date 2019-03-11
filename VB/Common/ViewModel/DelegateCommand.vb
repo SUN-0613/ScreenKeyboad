@@ -165,7 +165,7 @@ Namespace ViewModel
         ''' </param>
         Public Sub Execute(parameter As Object) Implements ICommand.Execute
 
-            _Execute(parameter)
+            _Execute(DirectCast(parameter, T))
 
         End Sub
 
@@ -190,6 +190,9 @@ Namespace ViewModel
 
         End Function
 
+        Public Shared Widening Operator CType(v As DelegateCommand) As DelegateCommand(Of T)
+            Throw New NotImplementedException()
+        End Operator
     End Class
 
 End Namespace

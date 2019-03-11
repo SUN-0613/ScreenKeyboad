@@ -24,7 +24,7 @@ Namespace ViewModel
             If (propertyName.Length.Equals(0)) Then
 
                 Dim caller As StackFrame = New StackFrame(stackFrameIndex)      ' 呼び出し元メソッド情報
-                Dim methodName As String() = caller.GetMethod().Name.Split("_") ' 呼び出し元メソッド名
+                Dim methodName As String() = caller.GetMethod().Name.Split("_"c) ' 呼び出し元メソッド名
 
                 propertyName = methodName(methodName.Length - 1)
 
