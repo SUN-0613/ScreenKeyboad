@@ -97,7 +97,10 @@ Namespace Form.Model
         ''' </summary>
         ''' <param name="value">現在値</param>
         Public Sub New(value As String)
+
+            NowValue = value
             Initialize(value)
+
         End Sub
 
         ''' <summary>

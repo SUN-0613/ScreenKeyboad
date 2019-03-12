@@ -25,9 +25,7 @@
         </StackPanel>
         <StackPanel Orientation="Vertical" Margin="5,0" MinWidth="130">
             <Border Height="30" >
-                <!--
                 <sk:TextBoxSK VerticalAlignment="Center" HorizontalContentAlignment="Right" IsUseNumericKeyboard="True" Text="{Binding NumText1}" />
-                -->
             </Border>
             <Border Height="30" >
                 <sk:TextBoxSK VerticalAlignment="Center" HorizontalContentAlignment="Right" IsUseNumericKeyboard="True" Text="{Binding NumText2}" />

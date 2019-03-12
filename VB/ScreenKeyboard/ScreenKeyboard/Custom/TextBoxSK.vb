@@ -45,11 +45,25 @@ Namespace Custom
         ''' テンキー使用可否プロパティ
         ''' </summary>
         Public Property IsUseNumericKeyboard As Boolean
+            Get
+                Return DirectCast(Me.GetValue(IsUseNumericKeyboardProperty), Boolean)
+            End Get
+            Set(value As Boolean)
+                Me.SetValue(IsUseNumericKeyboardProperty, value)
+            End Set
+        End Property
 
         ''' <summary>
         ''' アルファベットキーボード使用可否プロパティ
         ''' </summary>
         Public Property IsUseStringKeyboard As Boolean
+            Get
+                Return DirectCast(Me.GetValue(IsUseStringKeyboardProperty), Boolean)
+            End Get
+            Set(value As Boolean)
+                Me.SetValue(IsUseStringKeyboardProperty, value)
+            End Set
+        End Property
 
 #End Region
 
