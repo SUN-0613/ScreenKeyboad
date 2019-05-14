@@ -1,4 +1,4 @@
-﻿using AYam.Common.ViewModel;
+﻿using AYam.Common.MVVM;
 using System;
 using System.Windows;
 

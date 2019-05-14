@@ -1,4 +1,4 @@
-﻿using AYam.Common.ViewModel;
+﻿using AYam.Common.MVVM;
 using System;
 
 namespace SampleApp.Form.ViewModel
@@ -7,7 +7,7 @@ namespace SampleApp.Form.ViewModel
     /// <summary>
     /// スクリーンキーボードサンプルApp
     /// </summary>
-    public class InputDialog : VMBase, IDisposable
+    public class InputDialog : ViewModelBase, IDisposable
     {
 
         #region Property

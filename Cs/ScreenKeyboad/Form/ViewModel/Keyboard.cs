@@ -1,4 +1,4 @@
-﻿using AYam.Common.ViewModel;
+﻿using AYam.Common.MVVM;
 using System;
 using System.Windows;
 
@@ -8,7 +8,7 @@ namespace AYam.ScreenKeyboad.Form.ViewModel
     /// <summary>
     /// Keyboard.ViewModel
     /// </summary>
-    internal class Keyboard : VMBase, IDisposable
+    internal class Keyboard : ViewModelBase, IDisposable
     {
 
         #region Property
